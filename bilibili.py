@@ -88,7 +88,7 @@ def downloadBvVideo(url):
             break
     if data == '':
         print('解析失败！')
-    data_json = json.loads(data[0][20:])
+    data_json = json.loads(data[20:])
     videourl = data_json['data']['dash']['video'][0]['baseUrl']
     audiourl = data_json['data']['dash']['audio'][0]['baseUrl']
     title = html.xpath('/html/head/meta[@itemprop="name"]/@content')[0][:-26]
